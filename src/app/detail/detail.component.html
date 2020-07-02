@@ -1,0 +1,45 @@
+<main id="login" class="p-3">
+    <section class="m-3">
+        <div class="container">
+          <ul class="nav shadow-sm p-3 mb-3 bg-white rounded">
+            <li class="nav-item">
+              <h4>{{name}} Detail</h4>
+            </li>  
+            </ul>
+          
+            <div class="card-deck" *ngIf="all_detail?.length ==0">
+              <div class="card-body text-center">
+                <p class="card-text">No data</p>
+              </div>
+            </div>
+            <div class="card-deck" *ngIf="all_detail?.length !=0">
+  
+              <div class="card row">
+                <div class="col-sm-6">
+                  <img class="card-img-top" src="{{screen_large_url}}" alt="Card image cap">
+                </div>
+                <div class="col-sm-6">
+                  <div class="card-body">
+                    <h5 class="card-title">Name : {{name}}</h5>
+                    <h6 *ngIf="real_name" class="card-title">Real name : {{real_name}}</h6>
+                    <h6 *ngIf="birth" class="card-title">Birth : {{birth}}</h6>
+                    <h6 *ngIf="gender" class="card-title">Gender : {{gender}}</h6>
+                    <h6 *ngIf="gender" class="card-title">Origin : {{origin}}</h6>
+                    <h6 *ngIf="gender" class="card-title">First appeared : {{first_appeared_in_issue}}</h6>
+                    <h6 *ngIf="powers" class="card-title">Powers : {{powers}}</h6>
+                    <h6 *ngIf="team_enemies" class="card-title">Enemies : {{team_enemies}}</h6>
+                    <h6 *ngIf="team_friends" class="card-title">Friends : {{team_friends}}</h6>
+                    <p *ngIf="deck" class="card-text">Description : {{deck}}</p>
+                  </div>
+                </div>
+                   
+                <!-- <div class="card-footer">
+                  <small class="text-muted">Last updated {{date_last_updated | date: "dd MMM yyyy"}}</small>
+                </div> -->
+              </div>
+              
+          </div>
+                    
+        </div>
+    </section>
+</main>

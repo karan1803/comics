@@ -1,0 +1,53 @@
+<main id="login" class="p-3">
+    <section class="m-3">
+        <div class="container">
+            <!-- <div class="row col-sm-12 col-md-12 col-lg-12"> -->
+              
+              <div class="row">
+                <div class="col-sm-4 col-md-2 col-lg-3">
+                </div>
+                <div class="col-sm-6 col-md-8 col-lg-6 p-3 shadow-sm border border-primary rounded">
+                  <div class="p-2" align="center">
+                    <h2>Login</h2>
+                  </div>
+                  <form class="form-horizontal">
+                    <div class="form-group">
+                      <label class="control-label col-sm-2 col-lg-4 col-md-4" for="name"> Username </label>
+                      <div class="col-sm-10 col-lg-12 col-md-12">
+                        <input type="name" class="form-control" name="name" (keyup)="name_check($event)" [(ngModel)]="name" id="name" placeholder="Enter username">
+                        <div *ngIf="name_error" class="error_msg p-0">
+                          * please enter a valid username
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-sm-2 col-lg-4 col-md-4" for="pwd"> Password </label>
+                      <div class="col-sm-10 col-lg-12 col-md-12">
+                        <input type="password" class="form-control" name="pwd" (keyup)="pwd_check($event)" [(ngModel)]="pwd" id="pwd" placeholder="Enter password">
+                        <div *ngIf="pwd_error" class="error_msg p-0">
+                          * please enter a valid password
+                        </div>
+                      </div>
+                    </div>
+                    <!-- <div class="form-group">
+                      <div class="col-sm-offset-2 col-sm-10">
+                        <div class="checkbox">
+                          <label><input type="checkbox"> Remember me</label>
+                        </div>
+                      </div>
+                    </div> -->
+                    <div class="form-group">
+                      <div class="float-right col-sm-offset-2 col-md-offset-4 col-lg-offset-4 col-sm-10 col-lg-8 col-md-8">
+                        <button type="submit" (click)="loginvalid()" class="btn btn-primary float-sm-right">Login now !</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="col-sm-2 col-md-2 col-lg-3">
+                </div>
+              </div>
+            <!-- </div> -->
+        </div>
+    </section>
+</main>
+    

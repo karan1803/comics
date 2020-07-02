@@ -1,0 +1,23 @@
+.login-image{
+    background-image: url('https://www.itl.cat/pngfile/big/8-85011_best-anime-one-piece-wallpaper-one-piece.jpg');
+    width: 100%;
+    height: 400px;
+    background-size: 100% 100%;
+    border: 1px solid red;
+}
+@media(max-width:768px){
+    .login-image{
+        background-image: url('https://www.itl.cat/pngfile/big/8-85011_best-anime-one-piece-wallpaper-one-piece.jpg');
+        width: 100%;
+        height: 200px;
+        background-size: 100% 100%;
+        border: 1px solid red;
+    }
+}
+
+.error_msg{
+    color: red;
+    /* background-color: #f2dede; */
+    padding: 12px;
+    font-size: medium;
+}

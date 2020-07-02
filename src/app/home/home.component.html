@@ -1,0 +1,54 @@
+<main id="login" class="p-3">
+    <section class="m-3">
+        <div class="container">
+          <ul class="nav shadow-sm p-3 mb-3 bg-white rounded justify-content-end">
+            <li class="nav-item">
+              
+              <!-- <div class="col-sm-6"> -->
+                <form class= "mb-3">
+                  <div class="input-group">
+                    <input type="text" class="form-control" name="name_search" [(ngModel)]="name_search" placeholder="Search by name">
+                    <div class="input-group-append">
+                      <button class="btn btn-secondary" (click)="serviceLilstCall()" type="button">
+                        <i class="fa fa-search"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              <!-- </div> -->
+            </li>
+                
+            </ul>
+            <div class="card-deck" *ngIf="all_data?.length ==0">
+              <div class="card-body text-center">
+                <p class="card-text">No data</p>
+              </div>
+            </div>
+            <div class="card-deck" *ngIf="all_data?.length !=0">
+  
+              <div class="card col-sm-3 p-0" *ngFor="let data of all_data">
+                <img class="card-img-top" src="{{data.image.icon_url}}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Name : {{data.name}}</h5>
+                  <h6 *ngIf="data.real_name" class="card-title">Real name : {{data.real_name}}</h6>
+                  <p *ngIf="data.deck" class="card-text">{{data.deck}}</p>
+                </div>
+                    <div class="text-right p-2">
+                      <a [routerLink]="['/detail',data.id]" class="btn btn-primary">View detail</a>
+                    </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated {{data.date_last_updated | date: "dd MMM yyyy"}}</small>
+                </div>
+              </div>
+              
+          </div>
+          <div class="list_action pr-1 pt-4 mt-3" *ngIf="all_data?.length !=0">
+            <ul class="list_action-list m-0 pl-3">
+                <li class="list_action-list-item" (click)="previous_page(current_offset)"><a href="javascript:void(0);" class="list_action-btn prev {{page_previous_class}}">previous</a></li>
+                <li class="list_action-list-item" (click)="next_page(current_offset)"><a href="javascript:void(0);" class="list_action-btn next {{page_next_class}}">next</a></li>
+            </ul>
+        </div>
+          
+        </div>
+    </section>
+</main>
